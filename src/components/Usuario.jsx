@@ -26,16 +26,16 @@ class Usuario extends Component {
         setToastr('', '')
 
         await loginUsuario(usuario).then(response => {
-            if (response.status === 201) {
+            if (response && response.status === 201) {
                 setUsuario(response.data[0])
                 this.setState({usuario: response.data[0]})
                 setToastr('🤗Bem vindo, aproveite seu chat!', 'SUCESSO')
                 setToastr(null, '')
-            } else if (response.status === 200) {
+            } else if (response && response.status === 200) {
                 setUsuario(response.data[0])
                 setToastr('😍 Bem vindo de volta, continue seu chat!', 'INFO')
                 setToastr(null, '')
-            } else if (response.status === 400) {
+            } else if (response && response.status === 400) {
                 setToastr(`🤔 ${response.data.erro}`, 'ERROR')
             } else {
                 setToastr('🤔 Houve um problema ao entrar na sala, tente novamente mais tarde!', 'ERROR')
