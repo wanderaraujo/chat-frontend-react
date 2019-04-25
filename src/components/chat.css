@@ -2,7 +2,7 @@ body,html{
     height: 100%;
     margin: 0;
     background: #7F7FD5;
-   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
     background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
 }
 
@@ -28,7 +28,7 @@ body,html{
     border-bottom: 0 !important;
 }
 .card-footer{
-border-radius: 0 0 15px 15px !important;
+    border-radius: 0 0 15px 15px !important;
     border-top: 0 !important;
 }
 .container{
@@ -51,20 +51,20 @@ border-radius: 0 0 15px 15px !important;
     height: 60px !important;
     overflow-y: auto;
 }
-    .type_msg:focus{
+.type_msg:focus{
      box-shadow:none !important;
-   outline:0px !important;
+    outline:0px !important;
 }
 .attach_btn{
-border-radius: 15px 0 0 15px !important;
-background-color: rgba(0,0,0,0.3) !important;
+    border-radius: 15px 0 0 15px !important;
+    background-color: rgba(0,0,0,0.3) !important;
     border:0 !important;
     color: white !important;
     cursor: pointer;
 }
 .send_btn{
-border-radius: 0 15px 15px 0 !important;
-background-color: rgba(0,0,0,0.3) !important;
+    border-radius: 0 15px 15px 0 !important;
+    background-color: rgba(0,0,0,0.3) !important;
     border:0 !important;
     color: white !important;
     cursor: pointer;
@@ -250,4 +250,8 @@ background-color: rgba(0,0,0,0.3) !important;
 .usuario-form{
     margin-bottom: 15px !important;
     padding: 25px !important;
+}
+
+.top-chat{
+    padding-top: 30px;
 }

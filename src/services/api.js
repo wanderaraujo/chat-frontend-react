@@ -2,9 +2,9 @@ import axios from 'axios'
 
 const BASE_URL = 'http://localhost:3003/api'
 
-export const obterSalas = async () => {
+export const obterSalas = async (sala) => {
     return new Promise(resolve => 
-        axios.get(`${BASE_URL}/sala/obter-salas`)
+        axios.get(`${BASE_URL}/sala/obter-salas${sala}`)
         .then(resp => resolve(resp.data)) 
     )
 }
@@ -51,11 +51,13 @@ export const setStatusUsuario = async (usuario, status) => {
     return new Promise((resolve, reject) => 
         axios.patch(`${BASE_URL}/usuario/status`,{
             id_usuario: usuario.id,
+            nome: usuario.nome,
+            nickname: usuario.nickname,
             status: status
         })
         .then(resp => resolve(resp)) 
         .catch(error => {
-            // console.log(error.response)
+            console.log(error.response.data)
             resolve(error.response)
         })
     )

@@ -5,6 +5,10 @@ import { loginUsuario } from '../services/api'
 
 class Usuario extends Component {
 
+    state = {
+        usuarioTmp: ''
+    }
+
     handleSubmit = (values, {
         props = this.props,
         setSubmitting
@@ -21,23 +25,22 @@ class Usuario extends Component {
 
         setToastr('', '')
 
-        const response = await loginUsuario(usuario).then(response => {
-            return response
+        await loginUsuario(usuario).then(response => {
+            if (response.status === 201) {
+                setUsuario(response.data[0])
+                this.setState({usuario: response.data[0]})
+                setToastr('🤗Bem vindo, aproveite seu chat!', 'SUCESSO')
+                setToastr(null, '')
+            } else if (response.status === 200) {
+                setUsuario(response.data[0])
+                setToastr('😍 Bem vindo de volta, continue seu chat!', 'INFO')
+                setToastr(null, '')
+            } else if (response.status === 400) {
+                setToastr(`🤔 ${response.data.erro}`, 'ERROR')
+            } else {
+                setToastr('🤔 Houve um problema ao entrar na sala, tente novamente mais tarde!', 'ERROR')
+            }
         })
-
-        if (response.status === 201) {
-            setUsuario(response.data[0])
-            setToastr('🤗Bem vindo, aproveite seu chat!', 'SUCESSO')
-            setToastr(`👤 ${usuario.nome || usuario.nickname} Acabou de entrar no Chat!`, 'LOGIN_USU')
-        } else if (response.status === 200) {
-            setUsuario(response.data[0])
-            setToastr('😍 Bem vindo de volta, continue seu chat!', 'INFO')
-            setToastr(`👤 ${usuario.nome || usuario.nickname} Acabou de entrar no Chat!`, 'LOGIN_USU')
-        } else if (response.status === 400) {
-            setToastr(`🤔 ${response.data.erro}`, 'ERROR')
-        } else {
-            setToastr('🤔 Houve um problema ao entrar na sala, tente novamente mais tarde!', 'ERROR')
-        }
 
     }
 

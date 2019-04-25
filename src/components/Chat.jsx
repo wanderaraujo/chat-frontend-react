@@ -10,7 +10,6 @@ import './chat.css';
 const ChatContext = React.createContext({
     messageToastr: null,
     status: null,
-    usuariosOnline: null,
     usuario: null,
     sala: null,
     setSala: sala => { },
@@ -22,7 +21,6 @@ export default class Chat extends Component {
 
     state = {
         sala: null,
-        usuariosOnline: [],
         usuario: null,
         status: null
     }
@@ -62,7 +60,7 @@ export default class Chat extends Component {
                         ({  setUsuario, setSala, setToastr, messageToastr, status, sala, usuario }) => (
                             <Fragment>
 
-                                <div className="container-fluid h-100" >
+                                <div className="container-fluid h-100 top-chat" >
                                     <div className="row justify-content-center h-100">
                                         <SalaChat {...{ setSala }} />
 

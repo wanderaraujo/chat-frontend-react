@@ -13,7 +13,6 @@ export default class Conversa extends Component {
 
     componentWillReceiveProps(props, state){
         this.myRef.current.scrollTop = this.myRef.current.scrollHeight - this.myRef.current.clientHeight ;
-        // console.log('scrooll', height)
     }
 
     renderMensagens() {

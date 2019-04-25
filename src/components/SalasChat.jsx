@@ -11,12 +11,13 @@ class SalaChat extends Component {
     }
 
     componentDidMount() {
-        this.obterSalas()
+        let url = window.location.pathname || ''
+        this.obterSalas(url)
     }
 
-    obterSalas = async () => {
+    obterSalas = async (url) => {
 
-        const response = await obterSalas().then(response => {
+        const response = await obterSalas(url).then(response => {
             return response
         })
         this.setState({ salas: response });
@@ -26,7 +27,6 @@ class SalaChat extends Component {
 
     escolherSala(item = {}) {
         const { setSala } = this.props
-
         setSala(item)
         this.setState({ salaSelecionada: item.id })
     }
@@ -69,7 +69,6 @@ class SalaChat extends Component {
                         </div>
                     </div>
                   
-
                     <div className="card-body contacts_body">
                         <ui className="contacts">
                             {this.renderCards()}
