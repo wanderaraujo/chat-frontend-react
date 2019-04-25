@@ -36,6 +36,10 @@ A aplicação chat-app [http://localhost:3000](http://localhost:3000) está roda
 
 Melhorias a serem aplicadas em uma nova versão.
 
+### Otimizar Scroll Conversas
+
+Aprimorar o scroll no componente Conversa.jsx. Autualmente o scroll funciona, porém a última mensagem fica escondida.
+
 ### Status nas mensagens
 
 Informar em cada mensagem se o usário está ativo ou inativo. Atualmente só está sendo exibido status de ausente. 
