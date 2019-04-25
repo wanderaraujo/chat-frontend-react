@@ -16,7 +16,7 @@ O usuário poderá enviar novas mensagens e também sair da conversa.
 
 ### Pré-requisitos
 
-YARN V1.^13
+YARN V1.^13 <br>
 NodeJS V10^
 
 ## Instalar e executar o projeto
@@ -39,6 +39,11 @@ Melhorias a serem aplicadas em uma nova versão.
 ### Status nas mensagens
 
 Informar em cada mensagem se o usário está ativo ou inativo. Atualmente só está sendo exibido status de ausente. 
+
+### Contador Usuários/ Conversas
+
+Contabilizar o total de usuários em cada sala do chat. Atualmente colocando total de 2 em todas as salas.<br>
+Contabilizar o total de mensagens enviadas em todas as salas. Atualmente exibindo o total de 1767 mensagens. 
 
 ### Componentizar template
 
