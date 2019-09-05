@@ -6,6 +6,8 @@ if (process.env.NODE_ENV !== 'production') {
     BASE_URL = 'http://localhost:3003/api'
 }
 
+console.log(`Env mode ${process.env.NODE_ENV}`)
+console.log(`Env heroku ${process.env.HEROKU}`)
 console.log(`Buscando informações de ${BASE_URL}`)
 
 export const obterSalas = async (sala) => {
