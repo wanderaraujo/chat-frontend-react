@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 console.log(`Env mode ${process.env.NODE_ENV}`)
-console.log(`Env heroku ${process.env.HEROKU}`)
+console.log(`Env heroku ${process.env.DATABASE_URI}`)
 console.log(`Buscando informações de ${BASE_URL}`)
 
 export const obterSalas = async (sala) => {
