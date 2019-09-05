@@ -2,14 +2,6 @@ import axios from 'axios'
 
 var BASE_URL = 'https://chat-backend-nodejs.herokuapp.com/api'
 
-if (process.env.NODE_ENV !== 'production') {
-    BASE_URL = 'http://localhost:3003/api'
-}
-
-console.log(`Env mode ${process.env.NODE_ENV}`)
-console.log(`Env heroku ${process.env.DATABASE_URI}`)
-console.log(`Buscando informações de ${BASE_URL}`)
-
 export const obterSalas = async (sala) => {
     return new Promise(resolve => 
         axios.get(`${BASE_URL}/sala/obter-salas${sala}`)
