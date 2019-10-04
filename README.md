@@ -1,6 +1,6 @@
 # Chat de conversas com React
 
-APP Frontend responsável pelos chats dos usuários nas salas de converas. 
+APP Frontend responsável pelos chats dos usuários nas salas de converas.dklasjldjaskdljaslkdjaskldjlaskdjl 
 
 ## Regras de funcionamento
 
